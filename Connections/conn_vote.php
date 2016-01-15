@@ -7,6 +7,6 @@ $database_conn_vote = "u828621389_trek";
 $username_conn_vote = "u828621389_trek";
 $password_conn_vote = "mydatabase";
 //$conn_vote = mysql_pconnect($hostname_conn_vote, $username_conn_vote, $password_conn_vote) or trigger_error(mysql_error(),E_USER_ERROR);
-$conn_vote = new mysqli($hostname_conn_vote, $username_conn_vote, $password_conn_vote, $database_conn_vote) or die('Can\'t create connection: '.mysql_error());
+$conn_vote = mysql_connect($hostname_conn_vote, $username_conn_vote, $password_conn_vote) or die('Can\'t create connection: '.mysql_error());
 mysql_select_db($database_conn_vote, $conn_vote) or die('Can\'t access specified db: '.mysql_error());
 ?>
