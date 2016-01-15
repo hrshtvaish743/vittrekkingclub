@@ -18,10 +18,10 @@ $message = $_POST['feed'];
 $regno = $_POST['regno'];
 
 //database
-$servername = "localhost";
-$username = "harshit";
-$password = "";
-$dbname = "myDB1";
+$servername = "mysql.hostinger.in";
+$username = "u828621389_trek";
+$password = "mydatabase";
+$dbname = "u828621389_trek";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
