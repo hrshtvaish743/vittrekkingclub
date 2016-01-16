@@ -62,8 +62,8 @@ span.total-votes {
     color: #96959E;
 }
 #selection{
-    /*background-color: blue;*/
-    color : black;
+    /*background-color: blue;
+    color : black;*/
     border-radius: 20px;
     width: 70%;
     animation-duration: 2100ms;
