@@ -58,9 +58,12 @@ span.total-votes {
     font-size: 2.6em;
 }
 
-
+.spotlight{
+    color: #96959E;
+}
 #selection{
-    background-color: blue;
+    /*background-color: blue;*/
+    color : black;
     border-radius: 20px;
     width: 70%;
     animation-duration: 2100ms;
