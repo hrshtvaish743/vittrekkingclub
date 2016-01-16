@@ -131,7 +131,7 @@
             <section id="poll" class="container content-section">
                 <div >
                     <div class="col-lg-8 col-lg-offset-2">
-                      <legend class="text-center">Poll for the event you want Trekking club to do this Riviera!!</legend>
+                      <legend class="text-center">Poll for the event you want Trekking club to do this Semester!!</legend>
                         <fieldset>
                             <form action="<?php echo $editFormAction; ?>" id="form1" name="form1" method="POST">
                               <label>
