@@ -7,11 +7,18 @@ body {
 }
 .board {
     display: inline-block;
-    height: 250px;
+    height: 300px;
     width:300px;
     /*padding: 0px 20px 0px 20px;*/
     right: 0;
     margin: 0 0 15px;
+    border-radius: 8px;
+}
+.board_img {
+    height: 250px;
+    width:300px;
+    border-radius: 12px;
+    
 }
 .board .bhead {
     margin: 0 auto;
