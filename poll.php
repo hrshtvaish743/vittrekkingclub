@@ -1,4 +1,4 @@
-    <?php require_once('Connections/conn_vote.php'); ?>
+    <?php require_once('Connections/connection.php'); ?>
     <?php
     if (!function_exists("GetSQLValueString")) {
     function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -39,8 +39,8 @@
                            GetSQLValueString($_POST['id'], "int"),
                            GetSQLValueString($_POST['Poll'], "text"));
 
-      mysql_select_db($database_conn_vote, $conn_vote);
-      $Result1 = mysql_query($insertSQL, $conn_vote) or die(mysql_error());
+      mysql_select_db($database_connection, $connection);
+      $Result1 = mysql_query($insertSQL, $connection) or die(mysql_error());
 
       $insertGoTo = "results.php";
       if (isset($_SERVER['QUERY_STRING'])) {
@@ -54,9 +54,9 @@
     if (isset($_GET['recordID'])) {
       $colname_rs_vote = $_GET['recordID'];
     }
-    mysql_select_db($database_conn_vote, $conn_vote);
+    mysql_select_db($database_connection, $connection);
     $query_rs_vote = sprintf("SELECT * FROM poll WHERE id = %s", GetSQLValueString($colname_rs_vote, "int"));
-    $rs_vote = mysql_query($query_rs_vote, $conn_vote) or die(mysql_error());
+    $rs_vote = mysql_query($query_rs_vote, $connection) or die(mysql_error());
     $row_rs_vote = mysql_fetch_assoc($rs_vote);
     $totalRows_rs_vote = mysql_num_rows($rs_vote);
     ?>
