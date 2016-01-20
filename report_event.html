@@ -56,16 +56,7 @@
                                                 <a href="#page-top"></a>
                                             </li>
                                             <li>
-                                                <a class="page-scroll" href="#gallery">Gallery</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-scroll" href="#about">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="#board" class="page-scroll">Board</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-scroll" href="#contact">Contact Us</a>
+                                                <a class="page-scroll" href="www.vittrekkingclub.com">Main WebSite</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -75,42 +66,38 @@
                             </nav>
 
                             <section id="event_report" class="container content-section text-center">
-                                        <?php
-                                        $servername = "mysql.hostinger.in";
-                                        $username = "u828621389_trek";
-                                        $password = "mydatabase";
-                                        $dbname = "u828621389_trek";
-                                        $conn = new mysqli($servername, $username, $password, $dbname);
-                                        if ($conn->connect_error) {
-                                            die("Connection failed: " . $conn->connect_error);
-                                        } 
-                                        $sql = "SELECT id, name FROM events";
-                                        $result = $conn->query($sql);
-                                        if ($result->num_rows > 0) {
-                                            while($row = $result->fetch_assoc()) {
-                                                echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
-                                            }
-                                        } else {
-                                            echo "0 results";
-                                            }
-                                            $conn->close();
-                                        ?>
+                                        <form name="sentMessage" id="reportForm" novalidate>
+                                                            <div class="form-group container">
+                                                                <input type="text" class=" feed" placeholder="Name of The Conductor*" id="name" required data-validation-required-message="Please Enter Conductor's Name.">
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>  
+                                                            <div class="form-group container">
+                                                                <input type="text" class=" feed" placeholder="Name Of The Event *" id="event_name" required data-validation-required-message="Please Enter Event's Name.">
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>
+                                                            <div class="form-group container">
+                                                                <input type="date" class=" feed" placeholder="Date *" id="date" required data-validation-required-message="Please Enter Date of Conduct.">
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>
+                                                            <div class="form-group container">
+                                                                <textarea maxlength="2000" type="text" class="feed" placeholder="Report *" id="report" required data-validation-required-message="Please Enter Event's Report."></textarea>
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <div id="success"></div>
+
+                                                            <button type="submit" id="sub" class="btn btn-info btn-lg btn-default">Submit</button>
+                                                        </form>
                                 
                             </section>
 
-                            <!-- Footer -->
-                            <footer>
-                                <div class="container text-center">
-                                    <p>Copyright &copy; VIT Trekking Club 2015</p>
-                                </div>
-                            </footer>
-
+                            
 
                             <script src="js/jquery.js"></script>
                             <script src="js/bootstrap.min.js"></script>
                             <script src="js/jquery.easing.min.js"></script>
                             <script src="js/trek.js"></script>
-                            <script src="js/contact_me.js"></script>
+                            <script src="js/report_event.js"></script>
                             <script src="js/jqBootstrapValidation.js"></script>
                             <script>
                                 $('.carousel').carousel({
