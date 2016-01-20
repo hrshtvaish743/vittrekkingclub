@@ -52,7 +52,7 @@
                             rs.MoveFirst
                             while(!rs.eof)
                             {
-                                document.write(rs.fields(1));
+                                $("#event_report").document.write(rs.fields(1));
                                 rs.movenext;
                             }
                             rs.close;
