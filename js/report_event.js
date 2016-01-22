@@ -10,7 +10,7 @@ $(function() {
             // get values from FORM
             var conductor_name = $('input#name').val();
             var event_name = $('input#event_name').val();
-            var pdate = $('input#date').val();
+            var date = $('input#date').val();
             var report = $('textarea#report').val();
             
             $.ajax({

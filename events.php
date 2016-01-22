@@ -56,17 +56,9 @@
                                                 <a href="#page-top"></a>
                                             </li>
                                             <li>
-                                                <a class="page-scroll" href="#gallery">Gallery</a>
+                                                <a class="page-scroll" href="index.html">Back to Home</a>
                                             </li>
-                                            <li>
-                                                <a class="page-scroll" href="#about">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="#board" class="page-scroll">Board</a>
-                                            </li>
-                                            <li>
-                                                <a class="page-scroll" href="#contact">Contact Us</a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                     <!-- /.navbar-collapse -->
@@ -75,7 +67,7 @@
                             </nav>
 
                             <section id="event_report" class="container content-section text-center">
-                                        <?php
+                                <?php
                                         $servername = "mysql.hostinger.in";
                                         $username = "u828621389_trek";
                                         $password = "mydatabase";
@@ -84,17 +76,26 @@
                                         if ($conn->connect_error) {
                                             die("Connection failed: " . $conn->connect_error);
                                         } 
-                                        $sql = "SELECT id, name FROM events";
+                                        $sql = "SELECT * FROM events";
                                         $result = $conn->query($sql);
                                         if ($result->num_rows > 0) {
+                                            $rows=$result->num_rows;
                                             while($row = $result->fetch_assoc()) {
-                                                echo "id: " . $row["id"]. " - Name: " . $row["conductor_name"] . "<br>". $row["event_name"] . "<br>" . $row["date"] . "<br>". $row["report"] . "<br>";
+                                                echo "<div class=\"row\">";
+                                                echo "<div class=\"col-lg-8 col-lg-offset-2\">";
+                                                echo "<p>Event Name - </p>"."<h1>".$row["event_name"]."</h1>";
+                                                echo "<h4>".$row["conductor_name"]."</h4>";
+                                                echo "<h6>".$row["date"]."</h6>";
+                                                echo "<p>".$row["report"]."</p>";
+                                                echo "</div>";
+                                                echo "</div>";
+
                                             }
                                         } else {
                                             echo "0 results";
                                             }
                                             $conn->close();
-                                        ?>
+                                ?>
                                 
                             </section>
 
